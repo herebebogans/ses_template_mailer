@@ -9,6 +9,8 @@ isUrl = require('is-url')
 request = require('request')
 async = require('async')
 htmlToText = require('html-to-text')
+proxy = require('proxy-agent');
+proxyUrl = process.env.HTTP_PROXY || process.env.HTTP_PROXY;
 
 ###*
 Template Engine for Amazon Web Services Simple Email Service (SES).
@@ -169,7 +171,9 @@ class Email extends EventEmitter
 
 		if credentials
 			credentials = _.defaults credentials,
-				region: 'us-west-2'
+				region: 'us-east-1',
+                                httpOptions: { agent: proxy(proxyUrl) } 
+                                
 
 			AWS.config.update(credentials)
 

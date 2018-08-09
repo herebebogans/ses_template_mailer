@@ -48,6 +48,7 @@
   "devDependencies": {
     "coffee-script": "^1.10.0",
     "mocha": "3.4.2",
+    "proxy-agent": "^3.0.1",
     "should": "^11.2.1"
   }
 }
