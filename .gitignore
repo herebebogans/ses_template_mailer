@@ -50,6 +50,4 @@ node_modules
 
 
 # Static files
-index.js
-lib
 test/conf.coffee
